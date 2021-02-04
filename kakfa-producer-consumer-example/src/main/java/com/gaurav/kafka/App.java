@@ -1,5 +1,6 @@
 package com.gaurav.kafka;
 
+import com.gaurav.kafka.producer.SynchronousProducerSender;
 import java.util.concurrent.ExecutionException;
 
 import org.apache.kafka.clients.consumer.Consumer;
@@ -13,9 +14,11 @@ import com.gaurav.kafka.consumer.ConsumerCreator;
 import com.gaurav.kafka.producer.ProducerCreator;
 
 public class App {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 //		runProducer();
-		runConsumer();
+//		runConsumer();
+
+		SynchronousProducerSender.runProducer(10);
 	}
 
 	static void runConsumer() {
